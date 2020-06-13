@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+\usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{indentfirst}
+\usepackage[russian]{babel}
+\usepackage{bigints}
+\usepackage[a4paper, margin=0.6in]{geometry} 
+\usepackage{amsmath}
+\usepackage{ tipa }
+% \usepackage{ dsfont }
+
+
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage{amsthm,amssymb}
+\titleformat{\section}[block]{\large\bfseries\filcenter}{}{1em}{}
+\titleformat{\subsection}[hang]{\bfseries}{}{1em}{}
+\setcounter{secnumdepth}{0}
+\usepackage[fleqn]{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+
+ 
+% Links settings:
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+
+
+% Epigraph settings:
+\usepackage{epigraph}
+\renewcommand\textflush{flushright}
+% \newcommand\showdiv[1]{\overline{\smash{\hstretch{.5}{)}\mkern-3.2mu\hstretch{.5}{)}}#1}}
+\newcommand\ph[1]{\textcolor{white}{#1}}
+    \usepackage{etoolbox}
+    \makeatletter
+    \newlength\epitextskip
+    \pretocmd{\@epitext}{\em}{}{}
+    \apptocmd{\@epitext}{\em}{}{}
+    \patchcmd{\epigraph}{\@epitext{#1}\\}{\@epitext{#1}\\[\epitextskip]}{}{}
+    \makeatother
+    \setlength\epigraphrule{0pt}
+    \setlength\epitextskip{2ex}
+    \setlength\epigraphwidth{.8\textwidth}
+\makeatletter
+\newcommand\RedeclareMathOperator{%
+  \@ifstar{\def\rmo@s{m}\rmo@redeclare}{\def\rmo@s{o}\rmo@redeclare}%
+}
+\newcommand\rmo@redeclare[2]{%
+  \begingroup \escapechar\m@ne\xdef\@gtempa{{\string#1}}\endgroup
+  \expandafter\@ifundefined\@gtempa
+     {\@latex@error{\noexpand#1undefined}\@ehc}%
+     \relax
+  \expandafter\rmo@declmathop\rmo@s{#1}{#2}}
+\newcommand\rmo@declmathop[3]{%
+  \DeclareRobustCommand{#2}{\qopname\newmcodes@#1{#3}}%
+}
+
+% Wide hat:
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\reallywidehat[1]{%
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+  }{\textheight}% 
+}{0.5ex}}%
+\stackon[1pt]{#1}{\tmpbox}%
+}
+\parskip 1ex
+
+
+
+% Custom commands:
+\newcommand{\xor}{\mathbin{\oplus}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\cov}{\operatorname{cov}}
+\newcommand{\sumn}{{\sum\limits_{i=1}^n}}
+\newcommand{\x}{\times}
+\newcommand{\oo}{\infty}
+\renewcommand{\hat}{\reallywidehat}
+\renewcommand{\notin}{\not\in}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\bar}{\overline}
+\newcommand{\dx}{{\partial x}}
+\newcommand{\dy}{{\partial y}}
+\newcommand{\dz}{{\partial z}}
+\newcommand{\df}{{\partial f}}
+\newcommand{\du}{{\partial u}}
+
+
+
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+\newcommand*\E[1]{\mathbb{E}\left[{#1}\right]}
+\newcommand*\D[1]{\mathrm{D}\left[{#1}\right]}
+\newcommand*\note[1]{\footnotesize\text{\textit{[#1]}}}
+
+
+\begin{document}
+
+\title{}
+\author{}
+\date{\today}
+\maketitle
+\par\noindent\rule{\textwidth}{0.5pt}
+
+\section{№1}
+
+    \epigraph{
+      Statement goes here
+    }
+
+
+
+\begin{flalign*}
+f_\theta(\X) &= \prod\limits_{i=1}^n\mathrm P_\theta(X_i) = (2\theta)^{\sumn\mathrm I_{x=-1}(X_i)}  (2\theta)^{\sumn\mathrm I_{x=1}(X_i)} (1-5\theta)^{\sumn\mathrm I_{x=0}(X_i)} +\theta^{\sumn\mathrm I_{x=2}(X_i)}=\\
+&= \left((\theta)^{\sumn\mathrm I_{x\in\left\{-1, 1, 2\right\}}(X_i)} (1-5\theta)^{\sumn\mathrm I_{x=0}(X_i)}\right)/\left(2^{\sumn\mathrm I_{x\in\left\{-1, 1\right\}}(X_i)}\right)
+&&\end{flalign*}
+
+\underline{\textbf{Ответ:}} 
+
+
+\end{document}
+
+
+
