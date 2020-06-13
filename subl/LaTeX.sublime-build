@@ -1,0 +1,24 @@
+{
+    "shell_cmd": "pdflatex \"${file}\"; evince \"${file_base_name}.pdf\"",
+    "selector": "text.tex.latex",
+
+    "variants":
+    [
+        {
+            "name": "Build latex",
+              "shell_cmd": "pdflatex \"${file}\"; evince \"${file_base_name}.pdf\"",
+        },
+        {
+            "name": "Wipe",
+            "shell_cmd": "rm *.aux *.log *.pdf *.out *.toc *.dvi; "
+        },
+        {
+            "name": "Wipe + build",
+            "shell_cmd": "rm *.aux *.log *.pdf *.out *.toc *.dvi; pdflatex \"${file}\"; evince \"${file_base_name}.pdf\""
+        },
+        {
+            "name": "Draw",
+            "shell_cmd": "bash draw.sh"
+        }
+    ]
+}

@@ -1,2 +1,2 @@
 #! /bin/bash
-rm *.out *.aux *.log *.pdf
+rm *.aux *.log *.pdf *.out *.toc *.dvi
