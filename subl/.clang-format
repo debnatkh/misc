@@ -1,0 +1,18 @@
+# Caos style
+Language: Cpp
+BasedOnStyle: Google
+IndentWidth: 4
+UseTab: Never
+NamespaceIndentation: All
+ColumnLimit: 80
+AccessModifierOffset: -4
+AlignAfterOpenBracket: AlwaysBreak
+AlignOperands: false
+AlwaysBreakTemplateDeclarations: true
+BinPackArguments: false
+BinPackParameters: false
+AllowShortFunctionsOnASingleLine: Empty
+BreakBeforeBraces: Custom
+BraceWrapping:  
+  AfterEnum: true
+  AfterStruct: true 

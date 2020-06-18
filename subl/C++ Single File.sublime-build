@@ -1,0 +1,26 @@
+{
+	"shell_cmd": "g++-7 \"${file}\"  -O2 -std=c++17  -o \"${file_path}/${file_base_name}\"",
+	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+	"working_dir": "${file_path}",
+	"selector": "source.c, source.c++",
+
+	"variants":
+	[
+		{
+			"name": "Run input.txt (C++)",
+			"shell_cmd": "g++-7 \"${file}\"  -O2 -std=c++17  -o \"${file_path}/${file_base_name}\" && timeout 100s \"${file_path}/${file_base_name}\" < input.txt"
+		},
+		{
+			"name": "Chernov run",
+			"shell_cmd": "gcc \"${file}\" -std=c11 -fsanitize=leak -fsanitize=address -lm  -o \"${file_path}/${file_base_name}\" && timeout 100s \"${file_path}/${file_base_name}\" < input.txt"
+		},
+		{
+			"name": "Chernov style",
+			"shell_cmd": "clang-format-5.0 -style=file -i main.c \"${file}\""
+		},
+		{
+			"name": "cpplint",
+			"shell_cmd": "cpplint --filter=-,+build/include,-build/include_order,+build/include_what_you_use,+build/storage_class,+readability/alt_tokens,+readability/braces,+readability/casting,+readability/inheritance,+runtime/casting,-runtime/explicit,+whitespace/blank_line,+whitespace/braces,+whitespace/comma,+whitespace/comments,+whitespace/empty_conditional_body,+whitespace/empty_loop_body,+whitespace/end_of_line,+whitespace/ending_newline,+whitespace/forcolon,+whitespace/indent,+whitespace/line_length,+whitespace/newline,+whitespace/operators,+whitespace/parens,+whitespace/semicolon,+whitespace/tab --linelength=100 \"${file}\""
+		}
+	]
+}
