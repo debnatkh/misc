@@ -8,7 +8,7 @@ AUTH_KEY='OAuth XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
 API='https://api.contest.yandex.net/api/public/v2/contests'
 
-CONTEST_ID=10023
+CONTEST_ID=18595
 
 HEADERS = {
     'Authorization': AUTH_KEY,
@@ -17,84 +17,114 @@ HEADERS = {
 
 STUDENTS = """
 TOTAL
-Глеб (181-1)
-Виноградов Олег
-Грибов Филипп Юрьевич
-Деб Натх Максим -
-Илюхов Алексей Евгеньевич
-Искандаров Лев Андреевич
-Ифанов Илья Андреевич
-Конодюк Никита Евгеньевич
-Николенко Даниил Юрьевич
-Пак Ди Ун -
-Проскурин Николай Вадимович
-Романченко Полина Максимовна
-Соколов Павел Павлович
-Соколовский Алексей Константинович
-Степанов Никита Сергеевич
+Глеб (191-1)
+Амеличев Константин Вадимович
+Аржанцев Алексей Иванович
+Иваник Даниил Иванович
+Исмагилов Артем Ниязович
+Макоян Артем Каренович
+Мустафин Александр
+Погодин Михаил Александрович
+Пятько Даниил Владимирович
+Романов Владимир Олегович
+Случ Дмитрий Борисович
+Фридман Иван Владимирович
+Че Андрей
+Чечин Богдан Сергеевич
+Ширма Кирилл Олегович
+Катунькин Михаил Андреевич
 TOTAL
-
-Стас (181-2)
-Абрамчик Владислав
-Ашурбеков Замир Идрисович
-Гороховский Максим Андреевич
-Еленик Константин Ильич
-Исаев Сергей Олегович
-Калинин Никита Павлович
-Карпов Владимир Евгеньевич
-Матросов Артемий Валерьевич
-Морозов Никита Витальевич
-Павлов Вадим Алексеевич
-Сахабиев Асхат Равилевич
-Тертичный Дмитрий Евгеньевич
-Фадеев Никита Алексеевич
-Чайковский Илья Кириллович
-Шамазов Карим Фаридович
+Стас (191-2)
+Акулов Дмитрий Александрович
+Ахметшин Кирилл Данилевич
+Барышников Антон Константинович
+Волгин Даниил Эдуардович
+Гудзь Михаил Евгеньевич
+Зинченко Данила Сергеевич
+Ичалов Леонид Евгеньевич
+Колодезный Александр Анатольевич
+Кондратьев Захар Михайлович
+Перевышин Алексей Константинович
+Плотникова Анастасия Ивановна
+Сапожников Денис Сергеевич
+Упирвицкий Алексей Николаевич
+Шишков Алексей Алексеевич
+Сизов Кирилл Игоревич
 TOTAL
-
-Дима (183-1)
-Ветров Андрей Александрович
-Виноградова Дарья Сергеевна
-Греков Илья Сергеевич
-Григорьев Петр Владимирович
-Залялов Александр Олегович
-Зверев Игорь Евгеньевич
-Иванов Семен Вадимович
-Карташев Николай Геннадьевич
-Колесников Георгий Сергеевич
-Никитин Роман Александрович
-Серикова Екатерина Вячеславовна
-Солодовников Никита Александрович
-Тушканов Евгений Николаевич
-Шморгунов Александр Алексеевич
-Ямбулатов Искандер Рафаэлевич
+Гриша (193-1)
+Аъзам Бехруз Хусан угли
+Балюк Игорь Алексеевич
+Беляков Савелий Валерьевич
+Бобень Вячеслав Александрович
+Гутров Егор Дмитриевич
+Казанцев Даниил Андреевич
+Кулдошин Алексей Дмитриевич
+Лукомский Вячеслав Игоревич
+Максимов Алексей Николаевич
+Никулин Олег Алексеевич
+Рязанов Даниил Алексеевич
+Стрекаловская Наталья Андреевна
+Тренин Александр Александрович
+Шабат Дмитрий Васильевич
+Шрайнер Данил Павлович
 TOTAL
-
-Иван (183-2)
-Выродов Руслан Геннадьевич
-Зуев Михаил Алексеевич
-Корнейчик Марк Сергеевич
-Коряков Алексей Витальевич
-Лобанов Глеб Игоревич
-Миронов Алексей Дмитриевич
-Некрашевич Андрей Владимирович
-Нуриев Айнур Зуфарович
-Прокопенко Даниил Ильич
-Сафиуллин Зуфар Гумарович
-Сергеев Егор Алексеевич
-Смирнов Тимофей Алексеевич
-Старанцов Артём Алексеевич
-Стержанова Екатерина Игоревна
-Субхангулов Султан Шамилевич
-Царева Юлия Сергеевна
+Иван (193-2)
+Васильев Даниил Алексеевич
+Голенков Алексей Николаевич
+Голубь Алексей Олегович
+Леванков Егор Сергеевич
+Лоптев Сергей Евгеньевич
+Новицкий Иван Александрович
+Новичков Александр Юрьевич
+Переведенцев Артём Евгеньевич
+Петров Дамир Петрович
+Притуляк Илья Николаевич
+Сизов Илья Игоревич
+Сысоева Ярослава Евгеньевна
+Таныгин Антон Сергеевич
+Филиппов Андрей Владимирович
+Шатов Олег Викторович
 TOTAL
-Аабсолютный Максимум""".split('\n')
+Святослав (195-1)
+Богданов Александр Дмитриевич
+Буримский Семён Андреевич
+Вернигор Алиса Игоревна
+Воронин Андрей Андреевич
+Голобородько Ирина Денисовна
+Жуманиезов Эльбек Алишерович
+Козлов Денис Михайлович
+Козлова Ольга Алексеевна
+Орлов Александр Юрьевич
+Рофин Марк Петрович
+Смородинникова Анастасия
+Степанов Семён Евгеньевич
+Сушков Артем Олегович
+Шепелин Дмитрий Константинович
+Шныпко Василий Дмитриевич
+TOTAL
+Никита (195-2)
+Акимов Александр Дмитриевич
+Басалаев Максим
+Беляев Иван Алексеевич
+Березовский Валерий Сергеевич
+Воуба Архип Валерьевич
+Ершов Кирилл Геннадьевич
+Лобода Максим Юрьевич
+Лущ Иван
+Мальков Дмитрий Олегович
+Мошков Иван Владимирович
+Насонков Никита Владимирович
+Орешонок Елизавета Андреевна
+Рыжов Артемий Викторович
+Степанов Семён Степанович
+Чуканов Илья Валерьевич
+TOTAL""".split('\n')
 
 
 def get(req, **params):
     response = requests.get(API + "/{}".format(CONTEST_ID) + req, params=params, headers=HEADERS)
     if not response.ok:
-        print>>sys.stderr, response.status_code, response.reason
+        print(response.status_code, response.reason, file=sys.stderr)
         raise RuntimeError("Request failed: {}".format(req))
     return response.json()
 
@@ -106,9 +136,9 @@ def get_problem_name_mapping():
 
 
 def get_submissions(page):
-    print>>sys.stderr, "Requesting submissions from page {}".format(page)
+    print("Requesting submissions from page {}".format(page), file=sys.stderr)
     response = get("/submissions", page=page)
-    return [(s["author"], s["problem"], s["id"]) for s in response["submissions"] if s["verdict"] == "OK"]
+    return [s for s in response["submissions"]]
 
 
 def get_all_submissions():
@@ -117,10 +147,10 @@ def get_all_submissions():
     while True:
         new_subs = get_submissions(page)
         if not new_subs:
-            return res
+            break
         res += new_subs
         page += 1
-    return res
+    return [(s["author"], s["problem"], s["id"]) for s in res if s["verdict"] == "OK"]
 
 
 def is_submission_before_deadline(id, contest_duration):
@@ -136,7 +166,7 @@ def find_last_submission_after_deadline(ids, contest_duration):
         return 0
     l, r = 0, len(ids) - 1
     while l + 1 < r:
-        m = (l+r) / 2
+        m = (l+r) // 2
         if is_submission_before_deadline(ids[m], contest_duration):
             r = m
         else:
@@ -147,30 +177,30 @@ def find_last_submission_after_deadline(ids, contest_duration):
 def get_full_student_name(name):
     res = None
     for student in STUDENTS:
-        if name.encode("utf8").replace('ё', 'е') in student.replace('ё', 'е'):
+        if name.replace('ё', 'е') in student.replace('ё', 'е'):
             if res is not None:
-                print>>sys.stderr, "'{}' matches multiple entries from the google sheet".format(name.encode("utf8"))
+                print("'{}' matches multiple entries from the google sheet".format(name.encode("utf8")), file=sys.stderr)
                 return None
             res = student
     if res is None:
-        print>>sys.stderr, "'{}' does not match any entry from the google sheet".format(name.encode("utf8"))
+        print("'{}' does not match any entry from the google sheet".format(name.encode("utf8")), file=sys.stderr)
     return res
 
 
 if __name__ == "__main__":
-    print>>sys.stderr, "Consistency check: line {} in the google sheet must contain '{}'.".format(len(STUDENTS) - 2,  STUDENTS[-3])
+    print("Consistency check: line {} in the google sheet must contain '{}'.".format(len(STUDENTS) - 2,  STUDENTS[-3]), file=sys.stderr)
 
     name_mapping = get_problem_name_mapping()
-    print>>sys.stderr, "Problems:"
-    for long, short in sorted(name_mapping.iteritems(), key=lambda x: x[1]):
-        print>>sys.stderr, " {}: {}".format(short, long.encode("utf8"))
+    print("Problems:", file=sys.stderr)
+    for int, short in sorted(iter(name_mapping.items()), key=lambda x: x[1]):
+        print(" {}: {}".format(short, int.encode("utf8")), file=sys.stderr)
 
     subs = get_all_submissions()
     ids = [s[2] for s in subs]
     contest_duration = get("")["duration"]
-    print>>sys.stderr, "Contest duration is {}:{:02d}:{:02d}.".format(contest_duration/3600, contest_duration/60%60, contest_duration%60)
+    print("Contest duration is {}:{:02d}:{:02d}.".format(contest_duration//3600, contest_duration//60%60, contest_duration%60), file=sys.stderr)
     last_id = find_last_submission_after_deadline(ids, contest_duration)
-    print>>sys.stderr, "Last submission before deadline has id {}.".format(last_id)
+    print("Last submission before deadline has id {}.".format(last_id), file=sys.stderr)
 
     scores = {}
 
@@ -178,7 +208,7 @@ if __name__ == "__main__":
         student = get_full_student_name(s)
         problem = name_mapping.get(p)
         if student is None or problem is None:
-            print>>sys.stderr, "Failed to process entry ({}, {}, {})".format(s.encode("utf8"), p.encode("utf8"), id)
+            print("Failed to process entry ({}, {}, {})".format(s.encode("utf8"), p.encode("utf8"), id), file=sys.stderr)
             continue
         score = 1 if id <= last_id else 0.5
         if student not in scores:
@@ -197,4 +227,4 @@ if __name__ == "__main__":
             res += str(sc.get(letter, ''))
         res += '\n'
     sys.stdout.write(res)
-    print>>sys.stderr, "Now paste it to the google sheet starting with row 4!"
+    print("Now paste it to the google sheet starting with row 4!", file=sys.stderr)
