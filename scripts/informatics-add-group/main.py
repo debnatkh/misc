@@ -1,48 +1,75 @@
-import time, json
+import time, hashlib, json, os, warnings, cgi, re, csv, random
 import requests
+from collections import defaultdict
 from httplib2 import Http
+from bs4 import BeautifulSoup
 
 session = requests.Session()
 
-
-config = dict()
-config["INF_LOGIN"] = "****************"
-config["INF_PASSWORD"] = "****************"
-config["GROUP_ID"] = "15587"
-names = ["a.stepanov2005", "breadway", "daniil.bentsa", "ekaterina2018", "Limo56", "thematdev", "paul.kalug", "vladglazkov", "Ilya.kligunov", "kirill.kligunov", "ShinigamiCHOP", "lohuas", "IT56", "gerasikov.fml31", "artem3605", "d.sosunov", "gerasikov.fml31", "glebustim", "r.mouse.05", "amirnas", "fetis04@mail.ru", "sobachka", "newest7", "ilyakrasnovv", "post1107", "Oslik2006", "timurxan", "alex.kudrayshov", "lesnikgera", "SerZak", "vdv09", "aafiul", "mashapakkanen", "niktop", "igolkin.fml31", "avdeev2006", "khodak-gg@mail.ru", "ilinmisha13042006", "savvaw5", "yarykin.zhen", "GrishaRed", "dushenkov", "danya11", "Tm-A-T", "kseniashkuleva", "aleks.art", "meggra", "ivan18062006", "krylykov", "DimaTomsk", "Levsovga", "EvgenyUtkin", "ximer931", "suleimanova.xenia", "igor.malyshev07@gmail.com", "MrEssiorx", "AndrewSap", "akelv", "max1108", "btikirov", "nikita7777", "andrmizev", "avolkov2023", "timur20061", "artemtur", "ivanovnil2007@gmail.com", "exvita@yandex.ru", "alino4ka92", "robert2006", "Nikita2006Yashin", "n-ant", "kostylev.a.2023", "pervuneckih.v.2025"]
+group_id = input('Номер группы:')  # 15589
+tokens = dict()
+tokens["INF_LOGIN"] = input("Login:")
+tokens["INF_PASSWORD"] = input("Password:")
 
 url = "https://informatics.msk.ru/login/index.php"
-data = {'username': config['INF_LOGIN'], 'password': config['INF_PASSWORD']}
+data = {'username': tokens['INF_LOGIN'], 'password': tokens['INF_PASSWORD']}
 session.get(url)
 session.post(url, data)
 
+logins = []
+lg = input("Логины по одному в строке. Окончание - 3 восклицательных знака.\n")
+while lg != "!!!":
+    if lg.strip() != "":
+        logins.append(lg.strip())
+    else:
+        print('Not correct', lg)
+    lg = input()
+cnt = 0
+for name in logins:
+    url = "https://informatics.msk.ru/moodle/ajax/ajax.php?sid=&objectName=group&objectId=all&selectedName=users&action=list"
+    data = {
+        "start": "0",
+        "limit": "100",
+        "sort": "lastname",
+        "dir": "ASC",
+        "filter[0][field]": "username",
+        "filter[0][data][type]": "string",
+        "filter[0][data][value]": name,
+    }
 
-for name in names:
-	url = "https://informatics.msk.ru/moodle/ajax/ajax.php?sid=&objectName=group&objectId=all&selectedName=users&action=list"
-	data = {
-		"start": "0",
-		"limit": "25",
-		"sort": "lastname",
-		"dir": "ASC",
-		"filter[0][field]": "username",
-		"filter[0][data][type]": "string",
-		"filter[0][data][value]": name,
-	}
+    r = session.post(url, data=data)
+    time.sleep(1)
+    y = json.loads(r.text)
+    finded = False
+    us = ''
+    for u in y['users']:
+        try:
+            if u['username'].lower() == name.lower():
+                finded = True
+                us = u
+                break
+        except Exception:
+            print("Fail!!! {0}   {1}   {2}".format(name, u, Exception))
+    if not finded:
+        print("Not found!!! {0} {1} ".format(name, y))
+        continue
+    print(name, us, y)
 
-	r = session.post(url, data=data)
-	time.sleep(0.5)
-	y = json.loads(r.text)
-	print(y)
+    url = "https://informatics.msk.ru/moodle/ajax/ajax.php?sid=&objectName=group&objectId=" + str(group_id) + "&selectedName=users&action=add"
 
-	url = "https://informatics.msk.ru/moodle/ajax/ajax.php?sid=&objectName=group&objectId=" + config["GROUP_ID"] + "&selectedName=users&action=add"
+    data = {
+        "addParam": str(us).replace('"', '\\"').replace('\'', "\""),
+        "group_id": "",
+        "session_sid": "",
+    }
 
-	data = {
-		"addParam": str((y['users'][0])).replace('\'', "\""),
-		"group_id": "",
-		"session_sid": "", 
-	}
+    print(name, data)
 
-	print(data)
+    r = session.post(url, data=data)
+    if str(r) != '<Response [200]>':
+        print("Fail add!!! {0}   *{1}* ".format(name, r))
+        continue
+    cnt += 1
+    time.sleep(0.25)
 
-	r = session.post(url, data=data)
-	time.sleep(0.5)
+print('Finded {0} from {1}.'.format(cnt, len(logins)))
