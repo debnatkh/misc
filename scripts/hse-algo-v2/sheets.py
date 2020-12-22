@@ -16,7 +16,12 @@ class GoogleSheetsUpdater:
         students = self.wks.get(f'A{self.header + 1}:A')
         return list(map(lambda x: x[0], students[:students.index([])]))
 
-    def update_sheet(self, standings):
+    def update_sheet(self, standings, is_long):
+        if (is_long):
+            for i in range(len(standings.results)):
+                for j in range(len(standings.results[i])):
+                    if standings.results[i][j] != 1:
+                        standings.results[i][j] = ''
         self.wks.update(rowcol_to_a1(1, self.offset + 1), standings.name)
         self.wks.update(
             rowcol_to_a1(self.header + 1, self.offset + 1) + ":" +
