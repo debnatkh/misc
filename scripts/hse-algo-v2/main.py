@@ -8,11 +8,11 @@ from yandex_contest_api import YandexContestAPI
 
 
 def main(contests):
-    gsu = GoogleSheetsUpdater('HSE Algo Seminars 2021', 'Контесты 2 модуль')
+    gsu = GoogleSheetsUpdater('HSE Algo Seminars 2021', 'Контесты 3 модуль')
 
     students = gsu.get_students_list()
 
-    gsu.wks.update('A1', str(datetime.datetime.now()))
+    gsu.wks.update('A1', str(datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f%Z GMT")))
     logging.info(students)
 
     for contest_id, is_long in contests:
@@ -23,4 +23,4 @@ def main(contests):
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
-    main([(21961, True), (23375, True), (21895, False), (22752, False)])
+    main([(24514, False), (24808, False), (24924, True)])

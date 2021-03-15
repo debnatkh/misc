@@ -37,7 +37,7 @@ class YandexContestAPI:
 
     def get_problem_name_mapping(self, ):
         problems = self.get("/problems")["problems"]
-        return {problem["name"]: problem["shortName"] for problem in problems}
+        return {problem["name"]: problem["alias"] for problem in problems}
 
     def get_submissions(self, page):
         logging.info(f"Requesting submissions from page {page}")
@@ -53,7 +53,7 @@ class YandexContestAPI:
                 break
             res += new_subs
             page += 1
-        return [(s["author"], s["problem"], s["id"]) for s in res if s["verdict"] == "OK"]
+        return [(s["author"], s["problemAlias"], s["id"]) for s in res if s["verdict"] == "OK"]
 
     def is_submission_before_deadline(self, submission_id, contest_duration):
         return self.get(f"/submissions/{submission_id}/full")["timeFromStart"] / 1000 < contest_duration
@@ -113,7 +113,7 @@ class YandexContestAPI:
 
         for s, p, submission_id in subs:
             student = self.get_full_student_name(s, students)
-            problem = name_mapping.get(p)
+            problem = p
             if student is None or problem is None:
                 logging.info(f"Failed to process entry ({s}, {p}, {submission_id})")
                 continue
