@@ -17,8 +17,12 @@
             "shell_cmd": "rm *.aux *.log *.pdf *.out *.toc *.dvi; pdflatex \"${file}\"; evince \"${file_base_name}.pdf\""
         },
         {
-            "name": "Draw",
+            "name": "Draw.sh",
             "shell_cmd": "bash draw.sh"
+        },
+        {
+            "name": "Build.sh",
+            "shell_cmd": "bash build.sh"
         }
     ]
 }
