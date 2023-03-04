@@ -120,3 +120,8 @@ document.querySelectorAll('.rated-user').forEach(a => {
 document.querySelectorAll('.standings-flag').forEach(a => {
   a.remove();
 });
+
+// Hide to-practice
+const aElements = document.querySelectorAll('.change-participant-type-link').forEach(a => {
+  a.remove()
+});
