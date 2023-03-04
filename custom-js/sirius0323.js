@@ -108,11 +108,15 @@ const dict = {
   "svorogaze": "Загоровский Владимир",
 };
 
-const aElements = document.querySelectorAll('.rated-user')
-
-aElements.forEach(a => {
+// Rename users
+document.querySelectorAll('.rated-user').forEach(a => {
   const key = a.innerHTML.trim();
   if (key in dict) {
     a.innerHTML = dict[key];
   }
+});
+
+// Hide flag
+document.querySelectorAll('.standings-flag').forEach(a => {
+  a.remove();
 });
