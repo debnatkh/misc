@@ -18,6 +18,8 @@ function replaceTextOnPage(from, to){
   }
 }
 
+document.querySelector('.standings tbody tr th:nth-of-type(2)').style.width='200px'
+
 replaceTextOnPage('a.nasretdinov', 'Насретдинов Амир')
 replaceTextOnPage('AndreyPavlov', 'Павлов Андрей')
 replaceTextOnPage('kolomig0r', 'Коломиец Игорь')
