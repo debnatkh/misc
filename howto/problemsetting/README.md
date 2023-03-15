@@ -45,3 +45,35 @@ $2a$, $3a$ и так далее минут после начала заплыв�
 Для каждого набора входных данных, выведите одно целое число~--- через сколько минут после вашего прихода 
 один из пловцов окажется у бортика.
 ```
+
+### Генератор
+
+Используйте [jngen](https://github.com/ifsmirnov/jngen) (положите файл [jngen.h](https://raw.githubusercontent.com/ifsmirnov/jngen/master/jngen.h) в секцию `Files`).
+
+Пример генератора:
+
+```c++
+#include "jngen.h"
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+    registerGen(argc, argv, 1);
+    parseArgs(argc, argv);
+
+    int n = getOpt("n");
+    string mode = getOpt("mode", "random");
+    auto arr = Array::random(n, 1, 10);
+    if (mode == "sorted") {
+        sort(arr.begin(), arr.end());
+    }
+    cout << n << endl << arr << endl;
+}
+```
+
+Использовать так:
+
+```bash
+./gen -n 10 -mode sorted
+```

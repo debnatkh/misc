@@ -15,7 +15,7 @@ fetch('https://raw.githubusercontent.com/debnatkh/misc/master/custom-js/sirius03
   })
 ```
 
-<img width="823" alt="image" src="https://user-images.githubusercontent.com/16041594/224475719-46694b4e-0b5a-4032-9183-1953385b3e01.png">
+![img.png](img1.png)
 
 3. Нажать на кнопку Save
 
