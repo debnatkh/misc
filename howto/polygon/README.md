@@ -40,3 +40,25 @@ init stolen-problem`. При первом запуске `polygon-cli` потр�
 ## Чекер на Pascal-е
 
 Если в заливаемой задаче чекер — это `check.dpr`, то в секцию files нужно добавить [testlib.pas](./testlib.pas)
+
+## Тесты не влезают на страницу
+
+Если тесты не влезают на одну страницу pdf, надо в секции files открыть файл `problem.tex` и заменить строчки 
+
+```latex
+\begin{example}
+<#list problem.sampleTests as test>
+\exmpfile{${test.inputFile}}{${test.outputFile}}%
+</#list>
+\end{example}
+```
+
+на следующие:
+
+```latex
+<#list problem.sampleTests as test>
+\begin{example}
+\exmpfile{${test.inputFile}}{${test.outputFile}}%
+\end{example}
+</#list>
+```
